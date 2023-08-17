@@ -66,8 +66,5 @@ public class TicketController {
         return new ResponseEntity<>(tickets, HttpStatus.OK);
     }
 
-    //remote
-    // oktay aynacı
-    // turgut
 
 }
