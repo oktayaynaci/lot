@@ -67,5 +67,6 @@ public class TicketController {
     }
 
     //remote
+    // oktay aynacı
 
 }
