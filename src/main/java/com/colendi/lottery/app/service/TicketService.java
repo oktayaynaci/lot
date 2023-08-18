@@ -21,4 +21,5 @@ public interface TicketService {
     List<Ticket> getAllTicket();
 
     Optional<Ticket> updateTicket(UUID ticketId, TicketRequest ticketRequest);
+
 }

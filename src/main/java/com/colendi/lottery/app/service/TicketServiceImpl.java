@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,6 +27,11 @@ public class TicketServiceImpl implements TicketService {
         if (userRepository.existsById(userId)) {
             Ticket newTicket = new Ticket();
             newTicket.setUserId(userId);
+            newTicket.setPrice(ticketRequest.getPrice());
+            newTicket.setLotteryName(ticketRequest.getLotteryName());
+            newTicket.setLotteryStartDate(ticketRequest.getLotteryStartDate());
+            newTicket.setLotteryEndDate(ticketRequest.getLotteryEndDate());
+
             ticketRepository.save(newTicket);
             return new MessageResponse("New ticket created successfully");
         } else {
@@ -67,4 +71,5 @@ public class TicketServiceImpl implements TicketService {
         }
         return optionalTicket;
     }
+
 }
